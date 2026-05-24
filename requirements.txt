@@ -1,0 +1,53 @@
+# ============================================================
+# ChurnZero — Churn Prediction Pipeline
+# Python 3.10+ required (tested on 3.12.3)
+#
+# Install command:
+#   pip install -r requirements.txt
+#
+# Virtual environment (recommended):
+#   python -m venv churnzero_env
+#   source churnzero_env/bin/activate        # Linux / macOS
+#   churnzero_env\Scripts\activate           # Windows
+#   pip install -r requirements.txt
+# ============================================================
+
+# ── Core Data & Numerics ─────────────────────────────────────
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+
+# ── Machine Learning ─────────────────────────────────────────
+scikit-learn==1.8.0
+imbalanced-learn==0.14.1        # SMOTE — must match scikit-learn major version
+
+# ── Gradient Boosting Models ─────────────────────────────────
+lightgbm==4.6.0
+xgboost==3.2.0
+
+# ── Explainability ───────────────────────────────────────────
+shap==0.51.0                    # requires numpy>=1.20 and scikit-learn compatible
+
+# ── Hyperparameter Tuning ────────────────────────────────────
+optuna==4.8.0
+sqlalchemy==2.0.49              # optuna backend storage
+alembic==1.18.4                 # optuna database migrations
+
+# ── Visualization ────────────────────────────────────────────
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# ── Utilities (transitive — pinned to avoid silent breakage) ─
+joblib==1.5.3                   # sklearn parallel backend
+threadpoolctl==3.6.0            # sklearn CPU thread control
+tqdm==4.67.3                    # progress bars (optuna + shap)
+cloudpickle==3.1.2              # model serialization
+packaging==26.0                 # version checks across libs
+colorlog==6.10.1                # optuna logging
+colorama==0.4.6                 # colored terminal output (Windows safe)
+
+# ── JupyterLab (optional — for running .ipynb) ───────────────
+# Uncomment these lines if you are not using VS Code or Google Colab:
+# jupyterlab==4.4.3
+# ipykernel==6.29.5
+# ipywidgets==8.1.5             # enables tqdm progress bars in notebooks
